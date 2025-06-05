@@ -1,6 +1,7 @@
 import React from 'react';
 import { typingCategories } from '../lib/typingModes';
 import { Box, Typography, Button, Stack } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const parentBoxSx = {
   width: '100vw',
@@ -72,6 +73,8 @@ const modeSx = {
 };
 
 const Home: React.FC = () => {
+  const navigate = useNavigate()
+
   return (
     <Box sx={parentBoxSx}>
       <Typography variant="h2" component="h1" sx={parentTitleySx}>
@@ -93,7 +96,7 @@ const Home: React.FC = () => {
                 <Button
                   key={mode.id}
                   variant="contained"
-                  onClick={() => alert(`${mode.title} を選択しました！`)}
+                  onClick={() => navigate(`/practice/${mode.id}`)}
                   sx={{ ...ButtonSx, backgroundColor: mode.color }}
                 >
                   {mode.title}

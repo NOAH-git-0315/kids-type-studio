@@ -20,3 +20,5 @@ function App() {
 }
 
 export default App;
+
+//https://NOAH-git-0315.github.io/kids-type-studio/
