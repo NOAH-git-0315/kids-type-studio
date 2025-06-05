@@ -7,7 +7,7 @@ import Layout from './component/Layout';
 function App() {
   return (
     <TypingTextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/kids-type-studio">
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

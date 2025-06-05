@@ -1,3 +1,7 @@
+export type ChallengeKey =
+  | 'A1' | 'A2' | 'A3' | 'A4'
+
+
 export const romajiChallenge ={
     A1:{
         Jp:null,
