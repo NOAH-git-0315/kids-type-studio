@@ -11,9 +11,12 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
+  const sx ={  
+  background:"white",
+  color:"black"}
+
 export default function LeftDrawer() {
   const [open, setOpen] = React.useState(false);
-
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
@@ -50,7 +53,7 @@ export default function LeftDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)}>メニューをひらく</Button>
+      <Button sx={sx} onClick={toggleDrawer(true)}>メニューをひらく</Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>

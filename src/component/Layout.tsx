@@ -1,3 +1,4 @@
+import Dialogs from "./dialog";
 import Footer from "./footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -5,6 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <main>{children}</main>
       <Footer />
+      <Dialogs/>
     </>
   );
 }

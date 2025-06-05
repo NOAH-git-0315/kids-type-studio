@@ -3,6 +3,8 @@ import Keyboard from "../component/keyboard";
 import Hands from "../component/hands";
 import TextDisplay from "../component/TextArea";
 import { Box } from "@mui/material";
+import { useParams } from 'react-router-dom';
+import { romajiChallenge } from "../lib/romajiChallenge";
 
 const sx = {
   width: "100vw",
@@ -14,7 +16,9 @@ const sx = {
 }
 
 export default function Practice() {
-  const [texts] = useState<string[]>(["kusa", "boke"]);
+  const { id } = useParams();
+  const challenge = id && romajiChallenge[id]
+  const texts = challenge.rm
   const [lineIndex, setLineIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
