@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { typingCategories } from '../lib/typingModes';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { MynameText } from './Context/NameContext';
 
 const parentBoxSx = {
   width: '100vw',
@@ -74,6 +75,7 @@ const modeSx = {
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
+  const myName = useContext(MynameText)
 
   return (
     <Box sx={parentBoxSx}>
@@ -109,6 +111,7 @@ const Home: React.FC = () => {
           </Box>
         ))}
       </Stack>
+      <Typography variant="h2" component="h1">こんにちは！{myName.Myname}さん</Typography>
     </Box>
   );
 };

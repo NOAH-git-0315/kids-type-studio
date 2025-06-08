@@ -10,12 +10,25 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { useNavigate } from 'react-router-dom';
+
 
   const sx ={  
   background:"white",
   color:"black"}
 
+
+
 export default function LeftDrawer() {
+  const navigate = useNavigate()
+  function HandleClick(index:number){
+    switch(index){
+    case(0):navigate("/Home");
+    break;
+
+    case(1):navigate("/")
+    }
+  }
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -24,9 +37,9 @@ export default function LeftDrawer() {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['基本問題', 'オリジナル問題', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={()=>{HandleClick(index)}}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
@@ -37,7 +50,7 @@ export default function LeftDrawer() {
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['問題を追加', '問題インポート', '問題をエクスポート'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>

@@ -8,7 +8,7 @@ export default function Keyboard({ keyName }: Props) {
   return (
     <Box
       component="img"
-      src={`/keyboard/${keyName}.svg`}
+      src={`/kids-type-studio/keyboard/${keyName}.svg`}
       alt={`${keyName} key glowing`}
       sx={{
         width: 800,

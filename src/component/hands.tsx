@@ -18,6 +18,7 @@ const thumbs = [" "];
 
 let handName = "SpaceHand";
 
+
 if (leftPinky.includes(keyName)) {
   // 左小指
   handName = "L4";
@@ -46,10 +47,12 @@ if (leftPinky.includes(keyName)) {
   // 親指（スペース）
   handName = "SpaceHand";
 }
+
+  console.log('keyName:', keyName, 'handName:', handName);
   return (
     <Box
       component="img"
-      src={`/hand/${handName}.png`}
+      src={`/kids-type-studio/hand/${handName}.png`}
       alt={`${keyName} key glowing`}
       sx={{
         width: 600,

@@ -69,7 +69,7 @@ export default function Dialogs() {
         <DialogContent>
             <Box
               component="img"
-              src="dialog.png"
+              src="/kids-type-studio/dialog.png"
               alt="dialog"
               sx={{ width: 1500, height: 600, borderRadius: 2 }}
             />

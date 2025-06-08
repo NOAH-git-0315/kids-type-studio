@@ -3,23 +3,22 @@ import { Box, Typography, Paper } from '@mui/material';
 type TextDisplayProps = {
   currentText: string;
   keyName: string;
+  charIndex:number;
 };
 
-export default function TextDisplay({ currentText, keyName }: TextDisplayProps) {
+export default function TextDisplay({ currentText, keyName,charIndex }: TextDisplayProps) {
   const highlighted = (() => {
-    const index = currentText.indexOf(keyName);
-    if (index === -1) return currentText;
 
     return (
       <>
-        {currentText.slice(0, index)}
+        {currentText.slice(0, charIndex)}
         <Box
           component="span"
           sx={{ backgroundColor: '#FFD54F', fontWeight: 'bold' }}
         >
-          {currentText.slice(index, index + keyName.length)}
+          {currentText.slice(charIndex, charIndex + keyName.length)}
         </Box>
-        {currentText.slice(index + keyName.length)}
+        {currentText.slice(charIndex + keyName.length)}
       </>
     );
   })();
